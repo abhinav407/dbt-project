@@ -1,9 +1,9 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y git
 
-RUN pip3 install dbt
+RUN pip install dbt
 
-COPY . ./ 
+COPY mani.py /app/main.py
 
-ENTRYPOINT ["dbt()"]
+ENTRYPOINT ["python","/app/main.py"]
