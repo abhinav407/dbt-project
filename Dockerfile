@@ -4,6 +4,6 @@ WORKDIR /app
 
 RUN pip3 install dbt
 
-COPY main.py /app/main.py 
+COPY . ./ 
 
 ENTRYPOINT ["dbt()"]
