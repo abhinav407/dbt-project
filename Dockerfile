@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 
 WORKDIR /app
 
-RUN pip3 install dbt
+RUN pip install dbt==0.21.0
  
-
-CMD ["dbt","run"]
+copy . /app
+CMD ["python","dbt.py"]
