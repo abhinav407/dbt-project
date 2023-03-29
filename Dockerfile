@@ -6,4 +6,4 @@ RUN pip install dbt
 
 COPY mani.py /app/main.py
 
-ENTRYPOINT ["python","/app/main.py"]
+ENTRYPOINT ["dbt()"]
