@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED True
 # Copy local code to the container image.
 RUN mkdir /app
 WORKDIR /app
-COPY . ./app
+COPY dbt-project ./app
 
 # Install production dependencies.
 RUN pip install dbt
