@@ -7,6 +7,5 @@ def dbt_command(cmd):
     except subprocess.CalledProcessErro as e:
         print(e.output.decode('utf-8'))
         raise
-
-dbt_command('dbt run')
-dbt_command('dbt test')
+    return dbt_command('dbt run')
+#dbt_command('dbt test')
