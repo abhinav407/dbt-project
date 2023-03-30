@@ -1,14 +1,16 @@
 with airport as (
     select 
         AIRPORT_ID,
-        CITY_ID
+        CITY_ID,
+        COUNTRY_ID
     from `sab-dev-proj-dev-dw-4905`.MIDT_CURATED.AIRPORT_DIM
 ),
 
 airport_pair as (
     select 
         AIRPORT_ID,
-        CITY_ID
+        CITY_ID,
+        COUNTRY_ID
     from `sab-dev-proj-dev-dw-4905`.MIDT_CURATED.CLIENT_AIRPORT_DIM
 ),
 
@@ -17,7 +19,8 @@ final as (
         airport.AIRPORT_ID as AIRID,
         airport.CITY_ID as CT_ID,
         airport_pair.AIRPORT_ID,
-        airport_pair.CITY_ID
+        airport_pair.CITY_ID,
+        airport.COUNTRY_ID
     from airport
     left join airport_pair using (AIRPORT_ID)
 )
