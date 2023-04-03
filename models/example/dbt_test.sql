@@ -25,6 +25,6 @@ final as (
     left join airport_pair using (AIRPORT_ID)
 )
 
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 select * from final
