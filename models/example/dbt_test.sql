@@ -3,7 +3,7 @@ with airport as (
         AIRPORT_ID,
         CITY_ID,
         COUNTRY_ID
-    from `sab-dev-proj-dev-dw-4905`.MIDT_CURATED.AIRPORT_DIM
+    from `{{targert.name}}`.MIDT_CURATED.AIRPORT_DIM
 ),
 
 airport_pair as (
@@ -11,7 +11,7 @@ airport_pair as (
         AIRPORT_ID,
         CITY_ID,
         COUNTRY_ID
-    from `sab-dev-proj-dev-dw-4905`.MIDT_CURATED.CLIENT_AIRPORT_DIM
+    from `{{targert.name}}`.MIDT_CURATED.CLIENT_AIRPORT_DIM
 ),
 
 final as (
